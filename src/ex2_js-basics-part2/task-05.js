@@ -7,7 +7,7 @@ var findMaxElement = function(inputArray){
         } 
     }
 
-    return ('Максимальный элемент массива = ' + maxElement);
+    return maxElement;
 }
 
 module.exports = findMaxElement;

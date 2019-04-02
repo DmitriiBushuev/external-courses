@@ -1,28 +1,21 @@
 var advancedInspectArray = function(inputArray){
-    var evenNumb = 0, notEvenNumb = 0, zeroNumb = 0;
-    
-    for (i=0; i<(inputArray.length); i++){
-        if (isNaN(inputArray[i])){
-            continue;
-        }
-        
-        if ((inputArray[i]) == 0){
+	var zeroNumb = 0, evenNumb = 0, notEvenNumb = 0;
+
+    arrayForCount = inputArray.filter(function(element){
+		return element !== null;
+	})
+
+	for (var i=0;i<arrayForCount.length;i++){  	   
+        if (arrayForCount[i] === 0){
             zeroNumb++;
-            continue;
-        }
-        
-        switch ((inputArray[i]) % 2){
-            case 0:
-                evenNumb++;
-                break;
-            default:
-                notEvenNumb++;
-        }
-    }
-    
-    console.log('четных:' + evenNumb + ';' + ' нечетных:' + notEvenNumb + ';' + ' нуль:' + zeroNumb + ';');
-    var outputArray = [evenNumb, notEvenNumb, zeroNumb];
-    return (outputArray);
+        } else if ((arrayForCount[i] % 2) === 0){
+            evenNumb++;
+        } else {
+            notEvenNumb++;
+        }       
+	}    
+
+  return [evenNumb, notEvenNumb, zeroNumb];
 }
 
 module.exports = advancedInspectArray;
