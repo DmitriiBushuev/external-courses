@@ -1,12 +1,9 @@
 var inspectArray = function (inputArray){
-    var numberOfElements = 0;
-
-    for (i=0; i<inputArray.length; i++){
-        console.log('Элемент массива [' + i + ']' + ' : ' + inputArray[i]);
-        numberOfElements++
+    for (const i of inputArray) {
+        console.log('inputArray[' + inputArray.indexOf(i) + '] = ' + i);
     }
 
-    return ('Число элементов массива:' + numberOfElements);
+    console.log('Число элементов массива:' + inputArray.length);
 }
 
 module.exports = inspectArray;
